@@ -1,0 +1,236 @@
+* {
+    padding: 0;
+    margin: 0;
+    vertical-align: baseline;
+    list-style: none;
+    border: 0;
+    font-family: "Open Sans", sans-serif;
+  }
+  
+  body {
+    background: url("/imgs/assets/bg.jpg") no-repeat;
+    background-size: 60vw auto;
+    background-position: bottom right;
+  }
+  
+  .container {
+    width: 960px;
+    margin: 0 auto;
+  }
+  
+  .card {
+    -webkit-box-shadow: 0px 0px 30px -15px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 30px -15px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 30px -15px rgba(0, 0, 0, 0.75);
+    width: 405px;
+    margin: 46px 0; 
+    padding: 52px 40px;
+    background-color: white;
+    color: #4a4a4a;
+  }
+  
+  .card img {
+    width: 200px;
+    height: auto;
+    padding-bottom: 52px;
+  }
+  
+  .form {
+    width: 100%;
+  }
+  
+  #email,
+  #password,
+  #emailLabel,
+  #passwordLabel {
+    display: block;
+  }
+  
+  #email,
+  #password {
+    border: 1px solid #4a4a4a;
+    height: 50px;
+    width: 90%;
+    margin: 14px 0px;
+    padding: 0 20px;
+  }
+  
+  #email {
+    background: url("/imgs/assets/mail.png") no-repeat;
+    background-size: 18px 18px;
+    background-position: 370px 16px;
+  }
+  
+  #password {
+    background: url("/imgs/assets/lock.png") no-repeat;
+    background-size: 18px 18px;
+    background-position: 370px 16px;
+  }
+  
+  #emailLabel,
+  #passwordLabel {
+    font-weight: 600;
+    padding-top: 3px;
+  }
+  
+  /* Checkbox */
+  .checkbox-label {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 36px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 16px;
+    font-weight: lighter;
+  }
+  
+  .checkbox-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .checkmark {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    height: 13px;
+    width: 13px;
+    background-color: #eee;
+    border: 1px #4a4a4a solid;
+  }
+  
+  .checkbox-label:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  .checkbox-label input:checked ~ .checkmark {
+    background-color: #4a4a4a;
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .checkbox-label input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .checkbox-label .checkmark:after {
+    left: 3px;
+    top: -1px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  .problems {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: #4a4a4a;
+  }
+  
+  .btn-acessar {
+    margin-top: 36px;
+    display: block;
+    width: 100%;
+    height: 50px;
+    background: rgba(173, 35, 168, 1);
+    background: -moz-linear-gradient(
+      left,
+      rgba(173, 35, 168, 1) 0%,
+      rgba(219, 76, 29, 1) 100%
+    );
+    background: -webkit-gradient(
+      left top,
+      right top,
+      color-stop(0%, rgba(173, 35, 168, 1)),
+      color-stop(100%, rgba(219, 76, 29, 1))
+    );
+    background: -webkit-linear-gradient(
+      left,
+      rgba(173, 35, 168, 1) 0%,
+      rgba(219, 76, 29, 1) 100%
+    );
+    background: -o-linear-gradient(
+      left,
+      rgba(173, 35, 168, 1) 0%,
+      rgba(219, 76, 29, 1) 100%
+    );
+    background: -ms-linear-gradient(
+      left,
+      rgba(173, 35, 168, 1) 0%,
+      rgba(219, 76, 29, 1) 100%
+    );
+    background: linear-gradient(
+      to right,
+      rgba(173, 35, 168, 1) 0%,
+      rgba(219, 76, 29, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ad23a8', endColorstr='#db4c1d', GradientType=1 );
+  
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .ou-box {
+    margin-top: 34px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    text-align: center;
+  }
+  .ou-box span {
+    font-weight: lighter;
+  }
+  
+  .ou-box div {
+    height: 1px;
+    width: 43%;
+    background-color: #4a4a4a;
+    transform: translate(0, 100%);
+    margin-top: 10px;
+  }
+  
+  .btn-cadastrar {
+    margin-top: 36px;
+    display: block;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    border: 1px #4a4a4a solid;
+    font-weight: bolder;
+    color: #4a4a4a;
+  }
+  
+  .btn-cadastrar:hover {
+    color: white;
+    background-color: #4a4a4a;
+  }
+  
+  .links {
+    margin-top: 26px;
+  }
+  
+  .links a {
+    text-decoration: none;
+    color: #4a4a4a;
+  }
+  

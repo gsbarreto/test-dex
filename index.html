@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="form">
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username" />
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" />
+      <button type="submit" id="button">Send</button>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parse/2.2.1/parse.min.js"></script>
+    <script>
+      Parse.initialize("OSGiFZBrXxNLjN3gYDPsgi7P4a0j6fzcc2iaCKga");
+      Parse.serverURL = "http://localhost:1337/parse";
+
+      var form = document.getElementById("form");
+
+      var current = Parse.User.current();
+
+      var username = document.getElementById("username");
+      var password = document.getElementById("password");
+
+      if (current) {
+        form.hidden = true;
+
+        /*var Food = new Parse.Object.extend("Food");
+        
+        var query = new Parse.Query(Food);
+
+        var result = query.find();
+
+        result.then(function(e){
+          e.forEach(element => {
+            console.log(element.get("name")+" - "+element.get("link"));
+          });
+        });
+        */
+
+        /*Parse.Cloud.run("getAllFoods")
+          .then((resolve) => {
+            console.log(resolve);
+          }).catch((e) => console.log(e.message));
+          */
+
+        Parse.Cloud.run("getAllFoods")
+          .then(e => {console.log(e); console.log("deu bom");})
+          .catch(e => {console.log(e); console.log("deu ruim");});
+      }
+
+      form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+
+        //Registrar usuário
+        //console.log(username.value,password.value);
+        /*var user = new Parse.User();
+        user.set("username",username.value);
+        user.set("password",password.value);*/
+
+        try {
+          //Logar usuário
+          var user = Parse.User.logIn(username.value, password.value);
+          
+          // Registrar usuário
+          //user.signUp();
+          console.log("usuario logado");
+        } catch (e) {
+          console.log("Error: " + e.message);
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+.box {
+    height: 270px;
+    width: 270px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 32px;
+  }
+  
+  .box span {
+    position: absolute;
+    padding: 24px;
+    color: white;
+    font-size: 26px;
+    text-transform: unset;
+    bottom: 0;
+  }
+  
+  .box img {
+    height: 100%;
+    width: 100%;
+  }
+  
